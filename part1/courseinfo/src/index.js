@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const Header = (props) => {
+const Header = ({course}) => {
   return (
-    <h1>{props.course}</h1>
+    <h1>{course}</h1>
   )
 }
 
@@ -13,21 +13,21 @@ const Part = (props) => {
   )
 }
 
-const Content = (props) => {
-  console.log(props)
+const Content = ({parts}) => {
+  console.log(parts)
   return (
     <>
-      <Part text = {props.parts[0].name} number = {props.parts[0].exercises} />
-      <Part text = {props.parts[1].name} number = {props.parts[1].exercises} />
-      <Part text = {props.parts[2].name} number = {props.parts[2].exercises} />
+      <Part text = {parts[0].name} number = {parts[0].exercises} />
+      <Part text = {parts[1].name} number = {parts[1].exercises} />
+      <Part text = {parts[2].name} number = {parts[2].exercises} />
     </>
   )
 }
 
-const Total = (props) => {
+const Total = ({parts}) => {
   return (
     <>
-      <p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>
+      <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
     </>
   )
 }
