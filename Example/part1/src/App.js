@@ -20,25 +20,25 @@ const Button = ({handleClick, text}) =>
 const App = () => {
 	const [counter, setCounter] = useState(0)
 
-	// setTimeout(
-	// 	() => setCounter(counter + 1), 1000
-	// )
-
-	const increaseByOne = () => setCounter(counter + 1)
-	const decreaseByOne = () => setCounter(counter - 1)
-	const setToZero = () => setCounter(0)
+	const changeByOne = (num) => setCounter(counter + num)
+	// const increaseByOne = () => setCounter(counter + 1)
+	// const decreaseByOne = () => setCounter(counter - 1)
+	// const setToZero = () => setCounter(0)
 	
 	return (
 		<div>
 			<Display counter={counter} />
 			<Button 
-				handleClick={increaseByOne} 
+				// handleClick={increaseByOne} 
+				handleClick={ () => changeByOne(1) }
 				text={'plus'} />
 			<Button 
-				handleClick={setToZero}
+				// handleClick={setToZero}
+				handleClick={ () => changeByOne(-counter) }
 				text={'zero'} />
 			<Button 
-				handleClick={decreaseByOne}
+				// handleClick={decreaseByOne}
+				handleClick={ () => changeByOne(-1) }
 				text={'minus'} />
 		</div>
 	);
