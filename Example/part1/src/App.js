@@ -11,23 +11,21 @@ const App = () => {
 	// 	() => setCounter(counter + 1), 1000
 	// )
 
-	const handleClick = (num) => setCounter(counter + num)
+	const increaseByOne = () => setCounter(counter + 1)
+	const decreaseByOne = () => setCounter(counter - 1)
 	const setToZero = () => setCounter(0)
 	
 	return (
 		<div>
 			<Display counter={counter} />
 			<Button 
-				handleClick={() => handleClick(1)} 
+				handleClick={increaseByOne} 
 				text={'plus'} />
 			<Button 
-				handleClick={() => handleClick(-counter)}
+				handleClick={setToZero}
 				text={'zero'} />
 			<Button 
-				handleClick={setToZero}
-				text={'zero 2'} />
-			<Button 
-				handleClick={() => handleClick(-1)}
+				handleClick={decreaseByOne}
 				text={'minus'} />
 		</div>
 	);
