@@ -6,38 +6,15 @@ const App = () => {
 		left: 0, right: 0
 	})
 
-	const handleClick = (button) => {
-		const otherButton = (button === 'right') ? 'left' : 'right'
-		const newClick = {
-			[button]: click[button] + 1,
-			[otherButton]: click[otherButton]
-		}
-		setClick(newClick)
-	}
+	const handleClick = (button) => setClick({...click, [button]: click[button] + 1})
 
 	return (
 		<div>
 			{click.left}
-			{/* <button onClick={
-				() => setClick({
-					left: click.left + 1, right: click.right
-				})
-			}>
-				left
-			</button> */}
 			<button onClick={() => handleClick('left')}>
-				left
-			</button>
-			{/* <button onClick={
-				() => setClick({
-					left: click.left, right: click.right + 1}
-				)
-			}>
-				right
-			</button> */}
+				left</button>
 			<button onClick={() => handleClick('right')}>
-				right
-			</button>
+				right</button>
 			{click.right}
 		</div>
 	)
