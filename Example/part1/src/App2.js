@@ -7,22 +7,12 @@ const App = () => {
 	})
 
 	const handleLeftClick = () => {
-		setClick(prevClick => {
-			return ({
-				left: prevClick.left + 1,
-				right: prevClick.right
-			})
-		})
+		setClick({...click, left: click.left+1})
 		console.log(click)
 	}
 
 	const handleRightClick = () => {
-		setClick(prevClick => {
-			return ({
-				left: prevClick.left,
-				right: prevClick.right + 1
-			})
-		})
+		setClick({...click, right: click.right+1})
 		console.log(click)
 	}
 
