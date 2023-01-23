@@ -14,7 +14,7 @@ const History = ({ allClicks }) => {
 
 const Button = ({ handleButton, side }) => {
 	return(
-		<button onClick={() => handleButton(side)}>
+		<button onClick={handleButton(side)}>
 			{side}
 		</button>
 	)
@@ -26,7 +26,7 @@ const App = () => {
 	})
 	const [allClicks, setAll] = useState([])
 
-	const handleClick = (button) => {
+	const handleClick = (button) => () => {
 		setClick({...click, [button]: click[button] + 1})
 		setAll(allClicks.concat(button[0].toUpperCase()))
 	}
